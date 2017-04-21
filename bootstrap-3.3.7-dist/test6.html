@@ -1,0 +1,75 @@
+index.html
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <script src="angular.min.js"></script>
+ <script src="app.js"></script>
+ </head>
+ <body ng-app="myApp">
+ <div ng-controller="myCtrl">
+ <form>
+    Author:
+    <input type="text" ng-model="data.author">
+    <br>
+    <br> Title:
+    <input type="text" ng-model="data.title">
+    <br>
+    <br> Body:
+    <input type="author" ng-model="data.body">
+    <br>
+    <br>
+    <input type="submit" value="Submit" ng-click="submit()">
+  </form>
+  </div>
+  
+<script type="text/javascript">
+ app.js 
+ var app = angular.module('myApp', []);
+ app.controller('myCtrl', function($scope,$http) {
+ $scope.data = {};
+$scope.submit= function(){
+    console.log('clicked submit');
+    $http({
+        url: 'http://localhost:8080/blah',
+        method: 'POST',
+        data: $scope.data
+    }).then(function (httpResponse) {
+        console.log('response:', httpResponse);
+    })
+   }
+ });
+
+   server.js
+   var express = require('express');
+   var bodyParser = require('body-parser');
+   var mysql = require('mysql');
+   var app = express();
+
+    app.use(bodyParser.json({limit: '50mb'}));
+    app.use(express.static('public'));
+
+  var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'copedb'
+   });
+   connection.connect();
+
+    app.post('/blah', function(req, res, next) {
+    var cope = req.body;
+    console.log('request received:', req.body);
+   var query = connection.query('insert into cope set ?', cope, function (err,     result) {
+    if (err) {
+        console.error(err);
+        return res.send(err);
+    } else {
+        return res.send('Ok');
+    }
+    });
+    //res.send('received the data.');
+    });
+    app.listen(8080);
+    </script>
+    </body>
+  </html>

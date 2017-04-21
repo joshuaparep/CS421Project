@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>CS421</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+      <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="myscripts.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="css/bootstrap.min.css" />
+    <link type="text/css" href="css/bootstrap-timepicker.min.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
+</head>
+
+ <body ng-controller="MainCtrl">
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+ 
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <!--logo -->
+		    <div class="navbar-header">
+		    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+			    	<span class="icon-bar"></span>
+			    	<span class="icon-bar"></span>
+			    	<span class="icon-bar"></span>
+		    	</button>
+		    	<a href="#" class="navbar-brand">Hilo Bus System</a>
+		    </div><!--end header-->
+
+    <!-- main menu items -->
+	    <div class="collapse navbar-collapse" id="mainNavBar">
+	    	<ul class="nav navbar-nav">
+	    		<li class="active">
+	    			<a href="#">Home</a>
+	    		</li> 
+	    		 <!--drop down menu -->
+
+	    		 <li class="#">
+		    		<a href="#"> Contact </a>
+	    		 </li>
+
+	    		 <li class="dropdown">
+	    		 	<a href="#">About</a>
+	    		 </li>
+			</ul>
+			<!-- right align -->
+			<ul class="nav navbar-right">
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</div><!--end container-->
+	</nav><!--end navbar-->
+  </div>
+	<!--jumbotron-->
+	<div class="jumbotron">
+		<div class="container text-center">
+			<h1>Hilo Bus System Application</h1>
+			<p>This is the application for bus system in Hilo</p>
+			<div class="btn-group"></div>
+				<a href="" class="btn btn-lag btn-info"> Check Bus Status</a>
+				<a href="" class="btn btn-lag btn-info"> Read Instructions</a>
+				<a href="" class="btn btn-lag btn-info"> Check bus time</a>
+			</div>
+		</div><!--end container-->
+	</div><!--end jambotron-->
+	<section>
+		<div class="well">
+			<div class="w3-container w3-red text-center">
+				<h3>User Options</h3>
+				<p>Enter your starting location, your destintion and the time you want to get the bus at your location.</p>
+
+				<form action="/action_page.php" class="form-inline">
+					Start location:
+					<input type="text" name="start location">
+					End location:
+					<input type="text" name="end location">
+					Start Time:
+					<input type="time" id="myTime" value="00:00:00">
+                     Finish Time:
+					<input type="time" id="myTime" value="00:00:00">
+					Date:
+					<input type="date" id="myDate" value="2017-04-17"> <!--from javascript for date function-->
+					<button type="submit" class="btn btn-success">Submit</button>
+				</form>
+				 
+        </div>
+
+			</div><!--end container-->
+		</div><!--end well-->
+	</section><!--end section-->
+
+	<!--Galarry-->
+	<div class="navbar navbar-dark bg-primary">
+		<section>
+			<div class="carousel slide" id="screenshot-carousel" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
+					<li data-target="#screenshot-carousel" data-slide-to="1"></li>
+					<li data-target="#screenshot-carousel" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner"
+						<div class="item active">
+					<img src="images/bus1.jpg" alt="Text of the image">
+				</div>
+				<div class="item">
+					<img src="images/bus2.jpg" alt="Text of the image">
+				</div>
+				<div class="item">
+					<img src="images/bus3.jpg" alt="Text of the image">
+				</div>
+				</div><!--end of inner carousel-->
+			</div> <!--carousel end -->
+		</secton>
+	</div>
+	<!--call to action-->
+	<section>
+		<div class="well">
+			<div class="w3-container w3-red text-center">
+				<h3>Subcribe for more information</h3>
+				<p>Enter your name and email</p>
+
+				<form action="" class="form-inline">
+					<div class="form-group">
+						<label for="subscription">Subcribe</label>
+						<input type="text" class="form-control" id="subscription" placeholder="Your name">
+					</div>
+						<div class="form-group">
+							<label for="email"> Email address</label>
+							<input type="text" class="form-control" id="email" placeholder="Enter your Email">
+						</div>
+						<button type="submit" class="btn btn-danger">Subscribe</button>
+				</form>
+			</div><!--end container-->
+		</div><!--end well-->
+	</section><!--end section-->
+	<!--footer-->
+	<div class="bg-footer">
+		<div class="ti-footer">
+		</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="left">
+						<ul>
+							<li>
+								<a href="#">Request Information </a>
+							</li>
+							<li>
+								<a href="#/" class="disability">Disability Service</a>
+							</li>
+							<li>
+								<a href="#">Emergency Info</a>
+							</li>
+							<li>
+								<a href="#">Website Privacy & Policies</a>
+							</li>
+							<li>
+								<a href="#">Social Media Steam</a>
+							</li>
+							<a href="#" span class="visuallyhidden"> Twiter</span>
+								</a>								<a href="#" span class="visuallyhidden"> Facebook</span>
+								</a>
+								<a href="#" span class="visuallyhidden"> Google+</span>
+								</a>
+								
+							</li>
+						</ul>
+						</ul>
+					</div><!--end left-->
+					<!--right side-->
+					
+				</div>
+			</footer><!--end footer-->
+	</div>
+
+ <div ng-view></div>
+
+ <script>
+function myFunction() {
+    var x = document.getElementById("myDate").value;
+    document.getElementById("demo").innerHTML = x; 
+}
+ function myFunction() {
+    document.getElementById("myTime").value = "00:00:00";
+}
+
+</script>
+</body>
+</html>
